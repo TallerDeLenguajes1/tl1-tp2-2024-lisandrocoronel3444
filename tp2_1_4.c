@@ -12,11 +12,12 @@ struct Pc{
 int main(){
     char tipos[6][10] = {"Intel", "AMD", "Celeron", "Athlon", "Core", "Pentium"};
     Pc computadoras[N];
-    computadoras.tipo_cpu = tipos[0];
+    
     for(int i = 0; i < N; i++){
         computadoras[i].velocidad = rand() % 3 + 1;
-        computadoras[i].anio = rand() % 2015 + 2023;
+        computadoras[i].anio = rand() % 9 + 2015;
         computadoras[i].cantidad = rand() % 8 + 1;
+        computadoras[i].tipo_cpu = tipos[rand() % 6]; 
 
     }
     for(int i = 0; i < N; i++){
@@ -24,6 +25,7 @@ int main(){
         printf("Velocidad de procesamiento en GHZ: %d\n", computadoras[i].velocidad);
         printf("Anio: %d\n", computadoras[i].anio);
         printf("Canidad de nucleos %d\n", computadoras[i].cantidad);
+        printf("Tipo de procesador: %s\n", computadoras[i].tipo_cpu);
 
     }
 
